@@ -1,0 +1,253 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: maroon;    
+    padding: 5px;
+    font-family:'Lucida Sans', sans-serif;
+    font-size: 16px;
+}
+
+
+h2, h3,  h4{
+    margin-top: 14px;
+}
+
+p{
+    line-height: 1.2;
+}
+
+main{    
+    width: 80%;
+    margin: 20px auto;
+    border: 2px solid #ddd;
+    box-shadow: 8px 10px 10px chocolate;
+    border-radius: 5px;    
+    background-color:  #fff;  
+    color:  #555;
+    height:  auto; 
+    padding: 1%;  
+}
+/** - Header -**/
+header {
+    text-align: center;
+    background-color: Gainsboro;
+    /*padding: 30px;*/
+    border: 1px solid blueviolet;
+    border-radius: 12px;
+    margin-bottom:  10px;
+}
+
+header img{
+    width: 100%;
+    height: auto;
+    margin-bottom: -4px;
+    border-radius: 12px;
+}
+
+div.box {    
+    width: 100%;
+    padding: 8px;
+}
+
+div.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+a.link{
+    text-decoration: none;
+    color: navy;
+}
+a.link:visited{
+    color: green
+}
+a.link:hover{
+    color: brown;
+    font-style: normal;
+}
+
+section{
+    margin: 0px auto;
+    padding: 18px;    
+}
+
+section .tartalom{
+    width: 100%;
+    text-align: left;
+    margin-top: 5px;
+}
+
+section .tartalom::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+section p{
+    margin-top: 10px;
+    line-height: 1.4;
+}
+
+img.kep{
+    width:  80%;
+    height: auto;
+    margin-left: 10%;
+    border-radius: 8px;
+}
+
+img.jobbra{    
+    width: 40%;
+    height: auto;
+    margin: 0 0 2px 10px;
+    float:  right; 
+    border-radius: 5px;   
+}
+
+img.kep:hover, img.jobbra:hover{
+    opacity: 0.8;
+    box-shadow: 5px 6px 5px gray;
+    transition: 0.8s;
+}
+
+.link_jobbra{
+    text-align:        left;
+    font-style:        italic;
+    margin:            15px 0 15px 0;
+}
+/***/
+/* -- Külön a section-ök -- */
+#szekcio1{
+    background-color: white;
+    border: 1px solid brown;
+    border-radius: 12px;
+    margin-bottom: 10px;
+}
+
+#szekcio2, #szekcio4{
+    background-color: beige;
+    border: 1px solid brown;
+    border-radius: 12px;
+    margin-bottom: 10px;
+}
+
+#szekcio3{
+    background-color: lavender;
+    border: 1px solid blueviolet;
+    border-radius: 12px;
+    margin-bottom: 10px;
+}
+
+.video{
+    position: relative;
+    width: 70%;
+    overflow: hidden;
+    padding-top: 56.25%;
+    margin: 10px auto;
+    border-radius: 10px;
+}
+
+.responsiv{
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+ul{
+    list-style-type: circle;
+    padding-left: 20px;
+}
+
+form{
+    width: 50%;
+    margin: 5px auto;
+}
+
+form h4{
+    text-align: center;
+    font-weight: bold;
+    margin: 20px auto;
+}
+
+label{
+    font-size: 1.2rem;
+    font-style: italic;
+    line-height: 1.4;
+}
+
+input[type=text], 
+input[type=number]
+{
+    width: 100%;
+    padding: 8px;    
+    border-radius:    6px;
+    resize:  vertical;
+    background-color: #FFFACD;
+    margin: 10px auto;
+    font-size: 16px;
+}
+
+input:focus, select:focus{
+    background-color: white;    
+}
+
+button{
+    width: 40%;
+    padding: 12px;
+    background-color: lime;
+    border-radius:  6px;
+    resize: vertical;
+    margin-left: 30%;
+    font-weight: bold;
+}
+
+button:hover{
+    background-color: teal;
+    color: white;
+    cursor: pointer;
+    transition: 0.8s;
+}
+
+.note {
+    background-color: #FFFACD;
+    padding: 5px;
+}
+
+footer {
+    text-align: center;
+    background-color: #333;
+    padding: 20px;
+    border: 1px solid blueviolet;
+    border-radius: 12px;
+    color: cornsilk;
+}
+
+div.foldhozragadt {
+    position:          fixed;
+    bottom:            1vw;
+    right:             10px;
+    width:             25px;  
+}
+div.foldhozragadt:hover{
+    border-bottom:     4px solid brown;    
+    border-radius:     10px;
+}
+
+hr{
+    width: 60%;
+    margin: 8px auto;
+    border-top: 1px solid peru;
+}

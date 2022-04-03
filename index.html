@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">&nbsp;
+    <link rel="stylesheet" href="css/styles.css">
+    <title>JavaScript alapok</title>
+    <link rel="icon" type="image/x-icon" href="img/js.svg">
+</head>
+
+<body>
+    <main>
+        <header>
+            <img src="img/javascript.jpg" alt="JavaScript">
+        </header>
+        <div class="row">
+            <h2>Saját eszemmel elgondolva</h2>
+            <div class="box" id="eleje">
+                <section id="szekcio1">
+                    <h2>Változó:</h2>
+                    <div class="tartalom">
+                        <a href="https://www.ictshore.com/fullstack-course/javascript-tutorial-variables-in-js/attachment/fstack0021-01-javascript_variable/"
+                            target="_blank">
+                            <img class="jobbra" src="img/javascript_variable.svg" alt="JavaScript változó"
+                                title="https://www.ictshore.com/fullstack-course/javascript-tutorial-variables-in-js/">
+                        </a>
+                        <p> Bármilyen programot írunk, azokban adatokkal dolgozunk. Legtöbbször ezekre az adatokra nem
+                            csak egyszer van szükségünk a programunkon belül (akár arra, hogy kiírjuk a képernyőre),
+                            hanem további műveleteket, feladatokat szeretnénk velük végezni. Ezért, hogy ezek az adatok
+                            a programunkon belül több helyen is elérhetőek legyenek, el kell azokat tárolnunk valahol,
+                            hogy később használhassuk őket. Az adatokat pedig a Változókba tudjuk eltárolni.</p>
+                        <p> "Változónak nevezünk a programozási nyelvekben egy olyan azonosítót (szót), amivel
+                            valamilyen adatra, vagy objektumra hivatkozunk." </p>
+                        <p class="link_jobbra"> Forrás: <a class="link"
+                                href="https://wiki.prog.hu/wiki/V%C3%A1ltoz%C3%B3" target="_blank">&nbsp;
+                                https://wiki.prog.hu/wiki/Változó</a></p>
+                        <p>Saját kútfőből:</p>
+                        <p>Valójában amikor "nevesítünk" egy változót, a RAM vagy cach egy bizonyos szegmensét
+                            elkülönítjük az adat tárolására. Szerencsénkre a fejlődés miatt a programozónak - az
+                            Assembly vagy C nyelvvel ellentétben - a JavaScript-ben már nem kell a tároló címét tudnunk,
+                            vagy az abban lévő adatok elérését ismerni, hogy azokkal műveleteket tudjunk végezni,
+                            megteszik helyettünk a beépített linkerek és editorok (magas szintű nyelv). <br> Nekünk elég
+                            csak a változó deklarált nevével utalni rájuk. Ezért lehetőség szerint jó, ha előre
+                            definiáljuk a változó típusát, vagy inicializáljuk azt, mert a program eszerint foglal le
+                            memóriát (pl. nem egyforma helyet igényel egy integer, mint egy float, vagy egy array) Java
+                            Script-tel ellentétben sok nyelv erösen követeli is ezt (típusos nyelvek).</p>
+                    </div>
+                    </p>
+                    <a href="https://simplesnippets.tech/javascript-variables-data-types/" target="_blank">
+                        <img class="kep" src="img/javascript.png" alt="JS változók"
+                            title="https://simplesnippets.tech/javascript-variables-data-types/">
+                    </a>
+                    <h2>Deklaráció</h2>
+                    <div class="tartalom">
+                        <p> Deklarálunk egy változót, hogy azok nevére hivatkozva tudjunk velük műveleteket végezni a
+                            tárolás helyétől függetlenül, illetve bárhol a program futása során újra fel tudjuk
+                            használni, illetve a benne lévő értéket (néhány kivételtől eltekintve) meg tudjuk
+                            változtatni.</p>
+                    </div>
+                    <a href="https://www.programminghunk.com/2020/02/variables-in-javascript.html" target="_blank">
+                        <img class="kep" src="img/javascript_var.png" alt="JS deklaráció"
+                            title="https://www.programminghunk.com/2020/02/variables-in-javascript.html">
+                    </a>
+                    <p>Pl. Assembly nyelvben nem egyszerű egy szorzás:
+                    <ul>
+                        <li>MOV AX,1234h &nbsp;- <i>egy számot (1234h) rak be az AX regiszterbe</i></li>
+                        <li>MUL WORD PTR [5678h] &nbsp;- <i>a fenti értéket megszorozza a memória egy adott címén
+                                (5678h) található érétkkel</i></li>
+                        <li>MOV [5678h],AX &nbsp;- <i>az eredményt berakja az előbbi memóriarekeszbe</i></li> Innentől
+                        kezdve elveszett az eredti (1234h) adat
+                    </ul>
+                    <p class="link_jobbra"> Forrás: <a class="link"
+                            href="https://www.inf.u-szeged.hu/~ber/okt/asm/jegyzet.pdf" target="_blank">&nbsp;
+                            https://www.inf.u-szeged.hu/~ber/okt/asm/jegyzet.pdf</a></p>
+                    <p>A változóknál még talán fontos lehet, hol és hogyan deklaráljuk azokat, mert "láthatóság"
+                        szempontjából lehetnek egy függvényen, vagy blokkon belüliek.<br>
+                        Ezek csak a függvényen belül elérhetőek, kívülről nem láthatóak. <br>
+                        Vagy globálisak, ezek báhonnan elérhetőek függvények, vagy metódus számára (Talán még másik web
+                        oldalon is a Local Storage, vagy Session Storage-en keresztül) </p>
+
+                    <h2>Undefined:</h2>
+                    <p>Amikor a változó létre lett hozva, kapott nevet, de nem lett hozzárendelve érték. Az adott
+                        memóriarekesz még üres, arra vár, hogy tegyünk bele valamit. Ha ezzel az éréték nélküli
+                        változóval, üres adattal próbálunk műveletet végezni, akár kiíratni, ezt a hibaüzenetet
+                        kaphatjuk: Undefined. </p>
+                    <a href="http://ctp.mkprog.eu/hu/javascript/menu/operatorok/" target="_blank">
+                        <img class="jobbra" src="img/javascript-operator.jpg" alt="JavaScript operátorok"
+                            title="http://ctp.mkprog.eu/hu/javascript/menu/operatorok/">
+                    </a>
+                    <h2>Operátorok:</h2>
+                    <p>Az operátorok olyan funkciók, amelyek valamilyen műveletet végeznek el változókon, vagy más
+                        különböző értékeken, ezek lesznek az operandusok. <br>Operátorok lehetnek:</p>
+                    <ul>
+                        <li>aritmetikai</li>
+                        <li>logikai</li>
+                        <li>relációs(összehasonlító)</li>
+                        <li>bit műveletek(bitenkénti)</li>
+                        <li>értékadó operátorok (=)</li>
+                        <li>Még ide sorolják a típuskonverziót is</li>
+                    </ul>
+                    <h2>Konkatenáció:</h2>
+                    <p>Stringek "összeadása". Lényegében betűk vagy szavak összefűzése egy karakterlánccá.</p>
+                    <h3>Azonban ...</h3>
+                    <p>A JavaScript-ben létezik a <b>concat()</b> függvény, amely segítsével szintén összefűzhetünk két
+                        string-et és meghatározhatjuk, hogy azok milyen jellel, szimbólummal legyenek elválasztva.
+                        <br>Példa a használatára:
+                    </p>
+                    <p>valtozo1: Tanuljunk</p>
+                    <p>valtozo2: JavaScript-et!</p>
+                    <b>
+                        <p>Összefűzve: <span id="szoveg"></span></p><br>
+                    </b>
+                    <button onclick="osszefuz()">concat()</button>
+                    <script>
+                        function osszefuz() {
+                            var valtozo1 = "Tanuljunk";
+                            var valtozo2 = "JavaScipt-et!";
+                            document.getElementById("szoveg").innerHTML = valtozo1.concat(" ", valtozo2);
+                        }
+                    </script>
+                    <div class="w3-panel w3-card w3-light-grey">
+                        <h4>És a kód:</h4>
+                        <div class="w3-code jsHigh notranslate">
+                            var valtozo1 = "Tanuljunk"; <br>
+                            var valtozo2 = "JavaScipt-et!";<br>
+                            document.getElementById("szoveg").innerHTML = valtozo1.concat(" ", valtozo2);</div>
+                    </div>
+                </section>
+                <section id="szekcio2">
+                    <h2>Példa különböző változók deklarálására:</h2>
+                    <div class="tartalom">
+                        <form>
+                            <h4>String típusú változót definiálok (nev):</h4>
+                            <label for="nev" class="req">Kérem adja meg a keresztnevét:</label>
+                            <input type="text" id="nev" name="nev" placeholder="A becenév is megfelelő ...">
+                            <br>
+                            <h4>Egy integer típusú változút definiálok:</h4>
+                            <label for="birth">Születési éve:</label>
+                            <input type="number" id="birth" name="birth" min="1940">
+                        </form>
+                        <h4>Konkatenálom a kapott nevet, mint stringet:</h4>
+                        <button onclick="postaz()">Lássuk a műveletet</button>
+                        <b>
+                            <p id="udvozlet"></p>
+                        </b>
+                        <b>
+                            <p id="ma"></p>
+                        </b>
+                        <b>
+                            <p id="korod"></p>
+                        </b>
+                        <hr>
+                        <form>
+                            <label for="num" class="req">Kérek egy számot:</label>
+                            <input type="text" id="num" name="num" placeholder="Egy egész számot lécci ...">
+                            <br>
+                            <label for="alap">Mely számrendszerbe konvertáljak?:</label>
+                            <input type="number" id="alap" name="alap" min="2" max="36">
+                        </form>
+                        <button onclick="atvaltas()"> Átváltás más számrendszerbe</button>
+                        <b>
+                            <h4 id="ertekek"></h4>
+                        </b>
+                        <hr>
+                        <h3>Szabadjon itt állnia a fenti esemény kódjának:</h3>
+                        <div class="w3-panel w3-card w3-light-grey">
+                            <h4>A név és születés változók:</h4>
+                            <div class="w3-code jsHigh notranslate">
+                                function postaz() { <br>
+                                // Deklarálom a "nev" változót <br>
+                                &nbsp;let nev = document.getElementById("nev").value; <br>
+                                <br>
+                                // Deklarálom a "birth" változót, de mivel az input-ról string-ként kapom meg <br>
+                                // ahhoz, hogy számolni tudjak vele integer típussá kell konvertálnom <br>
+                                &nbsp;let birth = parseInt(document.getElementById("birth").value); <br><br>
+                                // Használhatom a JavaScript beépített függvényét, mely megadja az <br>
+                                // aktuális pontos dátumot: <br>
+                                &nbsp;most = new Date(); <br><br>
+                                / Azonban az aktuális dátum idő-formátumban van, <br>
+                                // így itt is kell egy típuskonverzió <br>
+                                // Itt használom a Date() getFullYear metódusát, ami csak az évet adja vissza <br>
+                                &nbsp;let ev = parseInt(most.getFullYear()); <br><br>
+                                // A két integer-ből egy aritmetikai operátor segítségével <br>
+                                //definiálom a "kor" változót <br>
+                                &nbsp;let kor = ev - birth; <br><br>
+                                // A kiszámított változókat DOM művelettel visszaadom a HTML-nek <br>
+                                document.getElementById("udvozlet").innerHTML = "Tisztelt " + nev + " üdvözöllek az
+                                oldalon !"; <br>
+                                document.getElementById("ma").innerHTML = "Most: " + most.getFullYear() + " évet írunk";
+                                <br>
+                                document.getElementById("korod").innerHTML = "Tehát jelenleg te "+ kor + " éves vagy."; <br>
+                                }
+                            </div>
+                        </div>
+                        <div class="w3-panel w3-card w3-light-grey">
+                            <h4>Átváltás más számrendszerbe:</h4>
+                            <div class="w3-code jsHigh notranslate"> function atvaltas() { <br> 
+                                // Deklarálom és beolvasom a két operandust:<br> 
+                                &nbsp;let sz = parseInt(document.getElementById("num").value);<br> 
+                                &nbsp;let al = parseInt(document.getElementById("alap").value);<br><br>
+                                // függvény definiálása<br> 
+                                &nbsp;function szamolgass(szam, alap) {<br> 
+                                &nbsp; // Kivédem, ha a felhesználó nem megfelelő adatot írt be,<br> 
+                                &nbsp; // ne térjen vissza a függyvény se NaN, se Undefined hibával<br> 
+                                &nbsp;&nbsp; if (!Number.isFinite(szam)) return 0<br> 
+                                &nbsp;&nbsp; if (!Number.isInteger(alap)) return 0<br> 
+                                &nbsp;&nbsp; if (alap < 2 || alap> 36) return 0<br><br> 
+                                &nbsp; // ha minden megfelelő a függvény visszatérési értéke ez a konverzió<br> 
+                                &nbsp; return szam.toString(alap);<br>
+                                }<br><br> 
+                                // meghívom a függvényt a két beolvasott változóval:<br>
+                                &nbsp;szamolgass(sz, al)<br> &nbsp;console.log(szamolgass(sz, al));<br><br>
+                                &nbsp;document.getElementById("ertekek").innerHTML = "A " +
+                                    document.getElementById("num").value + " szám a(z) " +
+                                    document.getElementById("alap").value + " számrendszeren = " + szamolgass(sz,
+                                    al);<br> 
+                                }
+                            </div>
+                        </div>
+                </section>
+                <h2>A W3Schools definícióit felhasználva</h2>
+                <section id="szekcio3">
+                    <div class="tartalom">
+                        <a href="https://www.w3schools.com/js/js_variables.asp">
+                            <img class="jobbra" src="img/W3Schools_logo.png" alt="W3Schools" title="https://www.w3schools.com/js/js_variables.asp">
+                        </a>
+                        <p> "Mik azok a változók? <br> A változók az adatok tárolására (adatértékek tárolására) szolgáló
+                            tárolók." </p>
+                        <p>4 módszer a JavaScript-változó deklarálására: </p>
+                        <ul>
+                            <li><b>var </b> segítségével</li>
+                            <li><b>let </b> segítségével</li>
+                            <li><b>const </b> segítségével</li>
+                            <li>Semmit sem használva</li>
+                        </ul>
+                        <p>"A JavaScript dinamikusan tipizált nyelv. Ez azt jelenti, hogy nem kell deklaráláskor
+                            meghatározni egy változó adattípusát, és az adattípusok automatikusan konvertálódnak, ahogy
+                            az a script futása során szükséges."</p>
+                        <p class="link_jobbra"> Forrás: <a class="link"
+                                href="http://nyelvek.inf.elte.hu/leirasok/JavaScript/index.php?chapter=3" target="_blank">&nbsp; http://nyelvek.inf.elte.hu/leirasok/JavaScript/index.php?chapter=3</a>
+                        </p>
+                        <p> Mikor használjuk a JavaScript var-t? <br> Mindig deklaráljuk a JavaScript-változókat a
+                            <b>var, let</b> vagy a <b>const</b> paraméterekkel. A var kulcsszót minden JavaScript kódban
+                            használták 1995 és 2015 között. <br> A let és const kulcsszavakat 2015-ben adták hozzá a
+                            JavaScripthez. Ha azt szeretné, hogy a kód a régebbi böngészőben fusson, akkor a var
+                            használható.
+                        </p>
+                        <div class="w3-panel w3-card w3-light-grey">
+                            <h4>Ebben a példában x, y és z változók, a let kulcsszóval deklarálva:</h4>
+                            <div class="w3-code jsHigh notranslate"> let x = 5;<br> let y = 6;<br> let z = x + y;<br>
+                            </div>
+                        </div>
+                        <div class="w3-panel w3-card w3-light-grey">
+                            <h4>Ebben a példában x, y és z nem deklarált változók: </h4>
+                            <div class="w3-code jsHigh notranslate"> 
+                                x = 5;<br> 
+                                y = 6;<br> 
+                                z = x + y;<br>
+                            </div>
+                        </div>
+                        <p> A fenti példákból létható:</p>
+                        <ul>
+                            <li>x tárolja az 5 értéket</li>
+                            <li>y tárolja a 6 értéket</li>
+                            <li>z tárolja a 11 értéket </li>
+                        </ul>
+                        </p>
+                        <p class="note">"Megjegyzés: <br> Jó programozási gyakorlat az összes változót a szkript elején
+                            deklarálni. " </p>
+                        <h3>Egy kifejezés, sok változó:</h3>
+                        <p> </p>
+                        <div class="w3-panel w3-card w3-light-grey">
+                            <h4>Egy utasításban sok változót deklarálhatunk. Kezdje az utasítást let-el, és válassza el
+                                a változókat vesszővel:</h4>
+                            <div class="w3-code jsHigh notranslate"> 
+                                let person = "John Doe",<br> 
+                                carName = "Volvo",<br>
+                                price = 200; </div>
+                        </div>
+                        <h3>Érték = undefined</h3>
+                        <p>"A számítógépes programokban a változókat gyakran érték nélkül deklarálják. Az érték lehet
+                            valami, amit ki kell számítani, vagy valami, amit később kell megadni, például a
+                            felhasználói bevitel. Az érték nélkül deklarált változó értéke <b>undefined</b> lesz."" <br>
+                        </p>
+                        <div class="w3-panel w3-card w3-light-grey">
+                            <h4>A carName változó értéke undefined lesz az utasítás végrehajtása után:</h4>
+                            <div class="w3-code jsHigh notranslate">
+                                let carName;<br>
+                                document.getElementById("demo").innerHTML = carName; </div>
+                        </div>
+                        <p>Az auto neve:</p>
+                        <b>
+                            <p id="demo"></p>
+                        </b>
+                        <script>
+                            let carName;
+                            document.getElementById("demo").innerHTML = carName;
+                        </script>
+                        <h3>JavaScript operátorok</h3>
+                        <p>,,Az algebrában és számítógéptudományban: műveleti jel, a műveletek elnevezésére használt
+                            szimbólum.” </p>
+                        <p>"Ebből kiindulva operátoroknak nevezzük azokat a nem-szöveges szimbólumokat, amelyek
+                            valamilyen műveletet írnak le. A legegyszerűbb ilyen műveletek az összeadás, a kivonás, a
+                            szorzás és az osztás. Ezek az alapvető operátorok minden programnyelvben megtalálhatóak, de
+                            ezenfelül is számos operátor létezik. Az operátorok programozási nyelvenként eltérhetnek,
+                            van amelyik többet tartalmaz, van amelyik kevesebbet, illetve van olyan nyelv, ahol egy-egy
+                            operátort másképp kell leírni." </p>
+                        <p class="link_jobbra"> Forrás: <a class="link"
+                                href="https://webiskola.hu/javascript-ismeretek/javascript-operatorok-ismertetese-js-aritmetikai-ertekado-osszehasonlito-logikai-bitenkenti-es-tipus-operator-bemutatasa/"
+                                target="_blank">&nbsp; https://webiskola.hu/javascript-ismeretek/</a>
+                        </p>
+                        <a href="https://www.w3schools.com/js/js_operators.asp" target="_blank">
+                            <img class="kep" src="img/operators.jpg" alt="JS operátorok" title="https://www.w3schools.com/js/js_operators.asp">
+                        </a>
+                        <h3>Konkatenáció</h3>
+                        <p>A konkatenáció konkrétan azt jelenti, hogy összefűzés. Segítségével számokat, szövegeket,
+                            karaktereket tudunk összefűzni. </p>
+                        <p>"A sztringekre az összehasonlító operátorokon kívül a konkatenáció operátort (+) is lehet
+                            használni. Ez az operátor két sztringet összekapcsol és visszatér a két operandus sztring
+                            uniójaként kapott sztringgel. A rövidített értékadó operátort (+=), szintén lehet használni
+                            sztringek konkatenálására."</p>
+                        <p class="link_jobbra"> Forrás: <a class="link"
+                                href="http://nyelvek.inf.elte.hu/leirasok/JavaScript/index.php?chapter=3" target="_blank">&nbsp; http://nyelvek.inf.elte.hu/leirasok/JavaScript/index.php?chapter=3</a>
+                        </p>
+
+                    </div>
+                </section>
+                <section id="szekcio4">
+                    <h3>Változókról bővebben:</h3>
+                    <div class="video">
+                        <iframe class="responsiv" src="https://www.youtube.com/embed/ClKHDkGE14g"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+                    </div>
+                    <hr>
+                    <h3>Operátorok bemutatása ugyanettől a cégtől:</h3>
+                    <div class="video">
+                        <iframe class="responsiv" src="https://www.youtube.com/embed/JTM0iemOzKg"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+                </section>
+            </div>
+        </div>
+        <footer>
+            <h4>&copy; 2022 - Prooktatás</h4>
+        </footer>
+    </main>
+
+    <div class="foldhozragadt">
+        <a href="#eleje"><img src="img/arrow.svg"></a>
+    </div>
+
+    <script src="https://www.w3schools.com/lib/w3codecolor.js"></script>
+    <script>
+        w3CodeColor();
+    </script>
+    <script>
+        function postaz() {
+
+            // Deklarálom a "nev" változót
+            let nev = document.getElementById("nev").value;
+
+            // Deklarálom a "birth" változót, de mivel az input-ról string-ként kapom meg
+            // ahhoz, hogy számolni tudjak vele  integer típussá kell konvertálnom                
+            let birth = parseInt(document.getElementById("birth").value);
+
+            // Használhatom a JavaScript beépített függvényét, mely megadja az
+            // aktuális pontos dátumot:
+            most = new Date();
+
+            // Azonban az aktuális dátum idő-formátumban van,
+            // tehát itt is kell egy típuskonverzió
+            // Itt használom a Date() getFullYear metódusát, ami csak az évet adja vissza
+            let ev = parseInt(most.getFullYear());
+
+            // A két integer-ből egy aritmetikai operátor segítségével 
+            //definiálom a "kor" változót
+            let kor = ev - birth;
+
+            // A kiszámított változókat DOM művelettel visszaadom a HTML-nek
+            document.getElementById("udvozlet").innerHTML = "Tisztelt " + nev + " üdvözöllek az oldalon !";
+            document.getElementById("ma").innerHTML = "Most: " + most.getFullYear() + " évet írunk";
+            document.getElementById("korod").innerHTML = "Tehát jelenleg te " + kor + " éves vagy.";
+        }
+
+        function atvaltas() {
+            // Deklarálom és beolvasom a két operandust: 
+            let sz = parseInt(document.getElementById("num").value);
+            let al = parseInt(document.getElementById("alap").value);
+
+            // függvény definiálása
+            function szamolgass(szam, alap) {
+                // Kivédem, ha a felhesználó nem megfelelő adatot írt be,
+                // ne térjen vissza a függyvény se NaN, se Undefined hibával
+                if (!Number.isFinite(szam)) return 0
+                if (!Number.isInteger(alap)) return 0
+                if (alap < 2 || alap > 36) return 0
+                // ha minden megfelelő a függvény visszatérési értéke ez a konverzió
+                return szam.toString(alap);
+            }
+
+            // meghívom a függvényt a két beolvasott változóval:
+            szamolgass(sz, al)
+            console.log(szamolgass(sz, al));
+            document.getElementById("ertekek").innerHTML = "A " + document.getElementById("num").value + " szám a(z) " + document.getElementById("alap").value + " számrendszeren = " + szamolgass(sz, al);
+
+
+        }
+    </script>
+</body>
+
+</html>
