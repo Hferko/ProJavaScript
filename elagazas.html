@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prooktat JavaScript - Hazai feladat </title>
+    <style>
+        body {
+            background-color: maroon;
+            padding: 5px;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 16px;
+        }
+
+        main {
+            width: 80%;
+            margin: 10px auto;
+            border: 1px solid #333;
+            box-shadow: 8px 8px 8px aquamarine;
+            border-radius: 10px;
+            padding: 8px;
+            background-color: white;
+            text-align: center;
+        }
+
+        p {
+            line-height: 1.2;
+        }
+
+        article {
+            text-align: left;
+            padding: 10px;
+        }
+
+        input[type=text],
+        input[type=number],
+        textarea {
+            width: 40%;
+            padding: 5px;
+            border-radius: 6px;
+            resize: vertical;
+            background-color: #FFFACD;
+            margin: 10px auto;
+            font-size: 16px;
+        }
+
+        input:focus,
+        select:focus,
+        textarea:focus {
+            background-color: white;
+        }
+
+        button {
+            width: 40%;
+            padding: 10px;
+            background-color: lime;
+            border-radius: 6px;
+            resize: vertical;
+            /*margin-left: 30%;*/
+            font-weight: bold;
+        }
+
+        button:hover {
+            background-color: teal;
+            color: white;
+            cursor: pointer;
+            transition: 0.8s;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <h3>A confirm() függvény</h3>
+        <article>
+            <p>A JavaScript háromféle előugró ablakkal rendelkezik. Ezeket egy függvénnyel tudjuk előhívni: Alert box,
+                Confirm box, és a Prompt box.</p>
+            <p>A confirm() függvényt gyakran használhatjuk, ha azt szeretnénk, hogy a felhasználó ellenőrizzen vagy
+                elfogadjon valamit.</p>
+            <p>Amikor megjelenik egy megerősítési mező, a felhasználónak az "OK" vagy a "Mégse" gombra kell kattintania
+                a folytatáshoz.</p>
+            <p>Ha a felhasználó az "OK" gombra kattint, a mező "True" értéket ad vissza. Ha a felhasználó a "Mégse"
+                gombra kattint, a mező "false" értéket ad vissza.</p>
+
+        </article>
+        <h3>A confirm() bemutatásához kérem töltse ki az alábbi kérdőívet</h3>
+        <form>
+            <label for="kv">Parancsol egy kávét? </label>
+            <select name="kv" id="kv">
+                <option value="igen">Igen</option>
+                <option value="nem">Nem</option>
+            </select>
+            <br><br>
+            <label for="tej">Óhajt-e a kávéhoz tejet? </label>
+            <select name="tej" id="tej">
+                <option value="tejjel">Igen</option>
+                <option value="tej nélkül">Nem</option>
+            </select>
+            <br><br>
+            <label for="sugar">Cukorral szeretné a kávét, vagy anélkül? </label>
+            <select name="sugar" id="sugar">
+                <option value="cukorral">Cukorral</option>
+                <option value="cukor nélkül">Cukor nélkül</option>
+                <option value="édesítővel">Édesítővel</option>
+            </select>
+            <br><br>
+            <!--<input type="submit" value="Submit">-->
+        </form>
+        <button onclick="tejeskave()">Leadom a rendelésem</button>
+        <h3 id="rendeles"></h3>
+        <hr style="width: 80%;">
+
+        <h3>gyakorlatok.md</h3>
+        <form>
+            <label for="megjegyez">Kérem, írjon valami szépet és biztatót ide:</label> <br>
+            <textarea id="megjegyez" name="megjegy" placeholder="Bármit, ami az eszébe jut ..."></textarea>
+
+            <h4>Ha számot kérünk be a felhasználótól, előnyös leellenőrizni, hogy megfelelő-e az adat</h4>
+            <p>Gyakorlat a try.. catch.. használatára</p>
+
+            <label for="bevitel">Kérek egy számot: &nbsp; </label>
+            <input id="bevitel" type="text">
+            <br>
+            <label for="bevitel2">Kérek egy számot: &nbsp; </label>
+            <input id="bevitel2" type="text">
+        </form>
+        <button onclick="adatbevitel()">Lássuk a bevitt adatokat</button>
+        <hr style="width: 80%;">
+        <p id="calculate"></p>
+        <p id="osszeg"></p>
+        <p id="prim"></p>
+        <p id="txt" style="margin-bottom: 30px;"></p>
+        
+    </main>    
+    <script src="script.js"></script>   
+
+</body>
+
+</html>
